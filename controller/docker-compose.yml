@@ -1,8 +1,8 @@
 version: '3'
 services:
   neo4j:
-    build: library/neo4j
+    image: neo4j
     container_name: neo4j
     ports:
-      - "7687":"7687"
-      - "7474":"7474"
+      - "7687:7687"
+      - "7474:7474"
