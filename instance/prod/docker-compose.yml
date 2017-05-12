@@ -7,6 +7,14 @@ services:
       ../core.env
     ports:
       - "8080:8000"
+  watchtower:
+    image: v2tec/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    # Only automatically update core W.I.L.L services
+    command:
+      - v2tec/watchtower core
   nginx:
     build: ../nginx
     links:
