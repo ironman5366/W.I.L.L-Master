@@ -1,0 +1,13 @@
+version: '3'
+services:
+  core:
+    image: willassistant/core:dev
+    container_name: core
+    ports:
+      - "8080":"8000"
+    nginx:
+      build: ../nginx
+      links:
+        - core
+      ports:
+        - "80":"80"
